@@ -2,7 +2,7 @@ Summary:	NCurses based nibbles game.
 Summary(pl):	Gra "nibbles" wykorzystuj±ca biblioteki NCurses
 Name:		nibbles
 Version:	0.0.4
-Release:	1
+Release:	2
 License:	GPL
 Vendor:		Project Purple ( http://www.earth.li/projectpurple/ )
 Group:		Games
@@ -33,10 +33,10 @@ siê nauczyæ jak to siê robi
 %{__make} CFLAGS="$RPM_OPT_FLAGS" LDFLAGS="-s" DATADIR=%{_datadir}
 
 %install
-install -d $RPM_BUILD_ROOT{%{_prefix}/games,%{_datadir}/games,/var/lib/games}
-install nibbles $RPM_BUILD_ROOT%{_prefix}/games
+install -d $RPM_BUILD_ROOT{%{_bindir},%{_datadir}/games,/var/lib/games}
+install nibbles $RPM_BUILD_ROOT%{_bindir}
 touch $RPM_BUILD_ROOT/var/lib/games/nibbles.score
-cp -a nibbles.levels $RPM_BUILD_ROOT/usr/share/games
+cp -a nibbles.levels $RPM_BUILD_ROOT%{_datadir}/games
 
 gzip -9nf README TODO HISTORY CREDITS example.nibblerc
 
@@ -45,7 +45,7 @@ rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
-%attr(2755,root,games) %{_prefix}/games/nibbles
+%attr(2755,root,games) %{_bindir}/nibbles
 %attr(664,root,games) /var/lib/games/nibbles.score
 %{_datadir}/games/nibbles.levels
 %doc *.gz
