@@ -2,12 +2,25 @@ Summary:	NCurses based nibbles game
 Summary(pl):	Gra "nibbles" wykorzystuj±ca biblioteki NCurses
 Name:		nibbles
 Version:	0.0.4
-Release:	5
+Release:	6
 License:	GPL
 Vendor:		Project Purple ( http://www.earth.li/projectpurple/ )
 Group:		Applications/Games
+Group(cs):	Aplikace/Hry
+Group(da):	Programmer/Spil
 Group(de):	Applikationen/Spiele
+Group(es):	Aplicaciones/Juegos
+Group(fr):	Applications/Jeux
+Group(is):	Forrit/Leikir
+Group(it):	Applicazioni/Giochi
+Group(ja):	•¢•◊•Í•±°º•∑•Á•Û/•≤°º•‡
+Group(no):	Applikasjoner/Spill
 Group(pl):	Aplikacje/Gry
+Group(pt):	AplicaÁıes/Jogos
+Group(ru):	“…Ãœ÷≈Œ…—/È«“Ÿ
+Group(sl):	Programi/Igre
+Group(sv):	Till‰mpningar/Spel
+Group(uk):	“…ÀÃ¡ƒŒ¶ “œ«“¡Õ…/∂«“…
 Source0:	http://www.earth.li/projectpurple/files/%{name}-v%{version}.tar.gz
 Patch0:		%{name}-Makefile.patch
 Patch1:		%{name}-window.patch
@@ -51,6 +64,6 @@ rm -rf $RPM_BUILD_ROOT
 %files
 %defattr(644,root,root,755)
 %attr(2755,root,games) %{_bindir}/nibbles
-%attr(664,root,games) /var/games/nibbles.score
+%attr(664,root,games) %config(noreplace) %verify(not size mtime md5) /var/games/nibbles.score
 %{_datadir}/games/nibbles.levels
 %doc *.gz
