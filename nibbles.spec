@@ -2,7 +2,7 @@ Summary:	NCurses based nibbles game
 Summary(pl):	Gra "nibbles" wykorzystuj±ca biblioteki NCurses
 Name:		nibbles
 Version:	0.0.4
-Release:	6
+Release:	7
 License:	GPL
 Vendor:		Project Purple ( http://www.earth.li/projectpurple/ )
 Group:		Applications/Games
@@ -32,22 +32,26 @@ ncurses ¿eby siê nauczyæ jak to siê robi.
 %patch2 -p1
 
 %build
-%{__make} CFLAGS="%{rpmcflags}" LDFLAGS="%{rpmldflags}" DATADIR=%{_datadir}
+%{__make} \
+	CC="%{__cc}" \
+	CFLAGS="%{rpmcflags}" \
+	LDFLAGS="%{rpmldflags}" \
+	DATADIR=%{_datadir}
 
 %install
 rm -rf $RPM_BUILD_ROOT
-install -d $RPM_BUILD_ROOT{%{_bindir},%{_datadir}/games,/var/games}
+install -d $RPM_BUILD_ROOT{%{_bindir},%{_datadir},/var/games}
 
 install nibbles $RPM_BUILD_ROOT%{_bindir}
 touch $RPM_BUILD_ROOT/var/games/nibbles.score
-cp -a nibbles.levels $RPM_BUILD_ROOT%{_datadir}/games
+cp -a nibbles.levels $RPM_BUILD_ROOT%{_datadir}
 
 %clean
 rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
+%doc README TODO HISTORY CREDITS example.nibblerc
 %attr(2755,root,games) %{_bindir}/nibbles
 %attr(664,root,games) %config(noreplace) %verify(not size mtime md5) /var/games/nibbles.score
-%{_datadir}/games/nibbles.levels
-%doc README TODO HISTORY CREDITS example.nibblerc
+%{_datadir}/nibbles.levels
