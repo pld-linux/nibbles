@@ -2,7 +2,7 @@ Summary:	NCurses based nibbles game
 Summary(pl):	Gra "nibbles" wykorzystuj±ca biblioteki NCurses
 Name:		nibbles
 Version:	0.0.4
-Release:	3
+Release:	4
 License:	GPL
 Vendor:		Project Purple ( http://www.earth.li/projectpurple/ )
 Group:		Games
