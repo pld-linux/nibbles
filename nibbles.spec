@@ -30,7 +30,7 @@ siê nauczyæ jak to siê robi
 %patch1 -p1
 
 %build
-make CFLAGS="$RPM_OPT_FLAGS" LDFLAGS="-s" DATADIR=%{_datadir}
+%{__make} CFLAGS="$RPM_OPT_FLAGS" LDFLAGS="-s" DATADIR=%{_datadir}
 
 %install
 install -d $RPM_BUILD_ROOT{%{_prefix}/games,%{_datadir}/games,/var/lib/games}
