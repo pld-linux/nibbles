@@ -1,0 +1,42 @@
+diff -Naur nibbles-v0.0.4/Makefile nibbles-v0.0.4-patched/Makefile
+--- nibbles-v0.0.4/Makefile	Thu Sep 23 00:22:16 1999
++++ nibbles-v0.0.4-patched/Makefile	Sat Apr 29 03:08:29 2000
+@@ -1,8 +1,10 @@
+-CC = gcc -Wall -g
++DATADIR = /usr/local/share
++CC = gcc -Wall -DLEVELDIR=\"$(DATADIR)/games/nibbles.levels\"
+ 
+ SRCS = player.c main.c loadMap.c cmdline.c ncdrawlib.c scoring.c 
+ OBJS = $(SRCS:.c=.o)
+ LIBS = -lncurses
++INC = -I/usr/include/ncurses 
+ 
+ INSTALL=/usr/bin/install -c
+ INSTALL_FOLDER=/usr/games
+@@ -10,10 +12,10 @@
+ all: nibbles
+ 
+ .c.o:
+-	$(CC) -c $*.c -o $*.o
++	$(CC) $(INC) $(CFLAGS) -c $*.c -o $*.o
+ 
+ nibbles: $(OBJS)
+-	$(CC) $(LIBS) $(OBJS)  -o $@
++	$(CC) $(LIBS) $(OBJS) $(LDFLAGS) -o $@
+ 
+ clean: 
+ 	rm -f *~ *.o nibbles
+diff -Naur nibbles-v0.0.4/nibbles.h nibbles-v0.0.4-patched/nibbles.h
+--- nibbles-v0.0.4/nibbles.h	Thu Sep 23 00:33:37 1999
++++ nibbles-v0.0.4-patched/nibbles.h	Sat Apr 29 03:08:47 2000
+@@ -39,7 +39,9 @@
+ 
+ #define NUMLIVES	3
+ #define STARTLEN	4
+-#define LEVELDIR	"/usr/local/games/nibbles.levels/"
++#ifndef LEVELDIR
++# define LEVELDIR	"/usr/local/share/games/nibbles.levels"
++#endif
+ #define LEVELSUFFIX	".lev"
+ #define RCFILENAME	".nibblerc"
+ 
