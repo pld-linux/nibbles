@@ -1,0 +1,12 @@
+diff -Naur nibbles-v0.0.4/main.c nibbles-v0.0.4-patch/main.c
+--- nibbles-v0.0.4/main.c	Thu Sep 23 00:47:35 1999
++++ nibbles-v0.0.4-patch/main.c	Sat Apr 29 03:31:53 2000
+@@ -136,7 +136,7 @@
+ rectangle(win,0,((maxx-len)/2)-1,(maxy/2)-2,len+4,5,'#',COLOR_PAIR(7));
+ 
+ attron(COLOR_PAIR(5));
+-mvwprintw(win,maxy/2,(maxx/2)-len/2,"%s",str);
++mvwprintw(win,maxy/2,(maxx/2)-len/2+1-len%2,"%s",str);
+ attroff(COLOR_PAIR(5));
+ 
+ wrefresh(win);
