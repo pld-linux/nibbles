@@ -4,12 +4,15 @@ Name:		nibbles
 Version:	0.0.4
 Release:	1
 License:	GPL
+Vendor:		Project Purple ( http://www.earth.li/projectpurple/ )
 Group:		Games
 Group(pl):	Gry
 Source0:	http://www.earth.li/projectpurple/files/%{name}-v%{version}.tar.gz
 Patch0:		nibbles-Makefile.patch
+Patch1:		nibbles-window.patch
+BuildRequires:	ncurses-devel >= 5.0
+Requires:	ncurses >= 5.0
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
-Vendor:		Project Purple ( http://www.earth.li/projectpurple/ )
 
 %description
 Nibbles is a remake of the classic Snake/Nibbles game in ncurses. I am sure
@@ -24,6 +27,7 @@ siê nauczyæ jak to siê robi
 %prep
 %setup -q -n %{name}-v%{version}
 %patch0 -p1
+%patch1 -p1
 
 %build
 make CFLAGS="$RPM_OPT_FLAGS" LDFLAGS="-s" DATADIR=%{_datadir}
