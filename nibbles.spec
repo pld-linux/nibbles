@@ -45,7 +45,7 @@ rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
-%attr(2711,root,games) %{_prefix}/games/nibbles
+%attr(2755,root,games) %{_prefix}/games/nibbles
 %attr(664,root,games) /var/lib/games/nibbles.score
 %{_datadir}/games/nibbles.levels
 %doc *.gz
