@@ -4,7 +4,7 @@ diff -Naur nibbles-v0.0.4/Makefile nibbles-v0.0.4-patched/Makefile
 @@ -1,8 +1,10 @@
 -CC = gcc -Wall -g
 +DATADIR = /usr/share
-+XCC = $(CC) -Wall -DLEVELDIR=\"$(DATADIR)/nibbles/nibbles.levels\"
++XCC = $(CC) -Wall -DLEVELDIR=\"$(DATADIR)/nibbles.levels\"
  
  SRCS = player.c main.c loadMap.c cmdline.c ncdrawlib.c scoring.c 
  OBJS = $(SRCS:.c=.o)
@@ -35,7 +35,7 @@ diff -Naur nibbles-v0.0.4/nibbles.h nibbles-v0.0.4-patched/nibbles.h
  #define STARTLEN	4
 -#define LEVELDIR	"/usr/local/games/nibbles.levels/"
 +#ifndef LEVELDIR
-+# define LEVELDIR	"/usr/share/nibbles/nibbles.levels"
++# define LEVELDIR	"/usr/share/nibbles.levels"
 +#endif
  #define LEVELSUFFIX	".lev"
  #define RCFILENAME	".nibblerc"
