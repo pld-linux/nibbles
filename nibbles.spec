@@ -6,21 +6,6 @@ Release:	6
 License:	GPL
 Vendor:		Project Purple ( http://www.earth.li/projectpurple/ )
 Group:		Applications/Games
-Group(cs):	Aplikace/Hry
-Group(da):	Programmer/Spil
-Group(de):	Applikationen/Spiele
-Group(es):	Aplicaciones/Juegos
-Group(fr):	Applications/Jeux
-Group(is):	Forrit/Leikir
-Group(it):	Applicazioni/Giochi
-Group(ja):	╔╒╔в╔Й╔╠║╪╔╥╔Г╔С/╔╡║╪╔Ю
-Group(no):	Applikasjoner/Spill
-Group(pl):	Aplikacje/Gry
-Group(pt):	AplicaГУes/Jogos
-Group(ru):	Приложения/Игры
-Group(sl):	Programi/Igre
-Group(sv):	TillДmpningar/Spel
-Group(uk):	Прикладн╕ Програми/╤гри
 Source0:	http://www.earth.li/projectpurple/files/%{name}-v%{version}.tar.gz
 Patch0:		%{name}-Makefile.patch
 Patch1:		%{name}-window.patch
