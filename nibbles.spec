@@ -41,8 +41,6 @@ install nibbles $RPM_BUILD_ROOT%{_bindir}
 touch $RPM_BUILD_ROOT/var/games/nibbles.score
 cp -a nibbles.levels $RPM_BUILD_ROOT%{_datadir}/games
 
-gzip -9nf README TODO HISTORY CREDITS example.nibblerc
-
 %clean
 rm -rf $RPM_BUILD_ROOT
 
@@ -51,4 +49,4 @@ rm -rf $RPM_BUILD_ROOT
 %attr(2755,root,games) %{_bindir}/nibbles
 %attr(664,root,games) %config(noreplace) %verify(not size mtime md5) /var/games/nibbles.score
 %{_datadir}/games/nibbles.levels
-%doc *.gz
+%doc README TODO HISTORY CREDITS example.nibblerc
