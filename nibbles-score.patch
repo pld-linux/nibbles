@@ -1,0 +1,11 @@
+--- nibbles-v0.0.4/scoring.h.orig	Fri Sep 17 23:18:39 1999
++++ nibbles-v0.0.4/scoring.h	Fri Nov  2 22:57:36 2001
+@@ -7,7 +7,7 @@
+ #include <time.h>
+ 
+ /* Default high score file location */
+-#define HIGHSCOREFILE "/var/lib/games/nibbles.score"
++#define HIGHSCOREFILE "/var/games/nibbles.score"
+ /* Max number of high scores we store */
+ #define MAXHIGHSCORES 20
+ 
