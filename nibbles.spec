@@ -7,6 +7,7 @@ License:	GPL
 Vendor:		Project Purple ( http://www.earth.li/projectpurple/ )
 Group:		Applications/Games
 Source0:	http://www.earth.li/projectpurple/files/%{name}-v%{version}.tar.gz
+# Source0-md5:	066b7dee4044e202977f0c4882e1faeb
 Patch0:		%{name}-Makefile.patch
 Patch1:		%{name}-window.patch
 Patch2:		%{name}-score.patch
