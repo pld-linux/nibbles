@@ -5,11 +5,12 @@ Version:	0.0.4
 Release:	4
 License:	GPL
 Vendor:		Project Purple ( http://www.earth.li/projectpurple/ )
-Group:		Games
-Group(pl):	Gry
+Group:		Applications/Games
+Group(de):	Applikationen/Spiele
+Group(pl):	Aplikacje/Gry
 Source0:	http://www.earth.li/projectpurple/files/%{name}-v%{version}.tar.gz
-Patch0:		nibbles-Makefile.patch
-Patch1:		nibbles-window.patch
+Patch0:		%{name}-Makefile.patch
+Patch1:		%{name}-window.patch
 URL:		http://www.earth.li/projectpurple/progs/nibbles.html
 BuildRequires:	ncurses-devel >= 5.0
 Requires:	ncurses >= 5.0
@@ -31,7 +32,7 @@ ncurses ¿eby siê nauczyæ jak to siê robi
 %patch1 -p1
 
 %build
-%{__make} CFLAGS="$RPM_OPT_FLAGS" LDFLAGS="-s" DATADIR=%{_datadir}
+%{__make} CFLAGS="%{rpmcflags}" LDFLAGS="%{rpmldflags}" DATADIR=%{_datadir}
 
 %install
 rm -rf $RPM_BUILD_ROOT
