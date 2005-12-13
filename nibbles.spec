@@ -53,5 +53,5 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(644,root,root,755)
 %doc README TODO HISTORY CREDITS example.nibblerc
 %attr(2755,root,games) %{_bindir}/nibbles
-%attr(664,root,games) %config(noreplace) %verify(not size mtime md5) /var/games/nibbles.score
+%attr(664,root,games) %config(noreplace) %verify(not md5 mtime size) /var/games/nibbles.score
 %{_datadir}/nibbles.levels
