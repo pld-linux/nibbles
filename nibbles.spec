@@ -1,5 +1,5 @@
 Summary:	NCurses based nibbles game
-Summary(pl):	Gra "nibbles" wykorzystuj±ca biblioteki NCurses
+Summary(pl.UTF-8):   Gra "nibbles" wykorzystujÄ…ca biblioteki NCurses
 Name:		nibbles
 Version:	0.0.4
 Release:	7
@@ -20,10 +20,10 @@ Nibbles is a remake of the classic Snake/Nibbles game in ncurses. I am
 sure that better nibbles games exist, but I thought that I'd write an
 ncurses one to learn how.
 
-%description -l pl
-Nibbles jest "od¶wie¿on±" wersj± klasycznej gry w Wê¿a/Nibbles. Jestem
-pewien, ¿e istnieje lepsza taka gra, ale pomy¶la³em, ¿e napiszê co¶ w
-ncurses ¿eby siê nauczyæ jak to siê robi.
+%description -l pl.UTF-8
+Nibbles jest "odÅ›wieÅ¼onÄ…" wersjÄ… klasycznej gry w WÄ™Å¼a/Nibbles. Jestem
+pewien, Å¼e istnieje lepsza taka gra, ale pomyÅ›laÅ‚em, Å¼e napiszÄ™ coÅ› w
+ncurses Å¼eby siÄ™ nauczyÄ‡ jak to siÄ™ robi.
 
 %prep
 %setup -q -n %{name}-v%{version}
