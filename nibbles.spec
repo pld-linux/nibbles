@@ -1,5 +1,5 @@
 Summary:	NCurses based nibbles game
-Summary(pl.UTF-8):   Gra "nibbles" wykorzystująca biblioteki NCurses
+Summary(pl.UTF-8):	Gra "nibbles" wykorzystująca biblioteki NCurses
 Name:		nibbles
 Version:	0.0.4
 Release:	7
